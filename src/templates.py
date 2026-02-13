@@ -68,14 +68,13 @@ def voice_guide(niche, vibe, platform, language):
     return {"voice": voice, "do": do, "dont": dont}
 
 def content_pillars(niche, audience, platform, goal, language):
-    pillars = [
+    return [
         _lang(language, f"Beginner tips in {niche}", f"Zoyambira za {niche}"),
         _lang(language, f"Mistakes {audience} make", f"Zolakwika zomwe {audience} amachita"),
         _lang(language, f"Tools & resources", f"Zida ndi zinthu zothandiza"),
         _lang(language, f"Quick challenges / mini tasks", f"Zovuta zazing’ono / ntchito zazifupi"),
         _lang(language, f"Behind-the-scenes / real stories", f"Zomwe zimachitika kumbuyo / nkhani zenizeni"),
     ]
-    return pillars
 
 def calendar_plan(niche, pillars, platform, vibe, days, language):
     plan = []
@@ -97,13 +96,14 @@ def caption_pack(niche, audience, vibe, platform, pillars, language):
         _lang(language, "Try this today:", "Yesani izi lero:"),
     ]
     caps = []
-    for i in range(12):
+    for _ in range(12):
         pillar = random.choice(pillars)
         hook = random.choice(hooks).replace("{audience}", audience)
-        cap = _lang(
-            language,
-            f"{hook}\n\n{pillar}\n✅ Step 1: ...\n✅ Step 2: ...\n✅ Step 3: ...\n\nFollow for more {niche} 🔥",
-            f"{hook}\n\n{pillar}\n✅ Gawo 1: ...\n✅ Gawo 2: ...\n✅ Gawo 3: ...\n\nTsatirani kuti mupeze zambiri za {niche} 🔥",
+        caps.append(
+            _lang(
+                language,
+                f"{hook}\n\n{pillar}\n✅ Step 1: ...\n✅ Step 2: ...\n✅ Step 3: ...\n\nFollow for more {niche} 🔥",
+                f"{hook}\n\n{pillar}\n✅ Gawo 1: ...\n✅ Gawo 2: ...\n✅ Gawo 3: ...\n\nTsatirani kuti mupeze zambiri za {niche} 🔥",
+            )
         )
-        caps.append(cap)
     return caps

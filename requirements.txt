@@ -1,2 +1,11 @@
 streamlit==1.33.0
 python-dotenv==1.0.1
+pandas
+requests
+moviepy==1.0.3
+imageio
+imageio-ffmpeg
+Pillow<10
+numpy
+decorator
+proglog
